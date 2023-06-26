@@ -54,7 +54,7 @@ public enum Credentials {
 
 		x = this.gapBetweenBorders;
 		y = this.cHand.y;
-		y -= this.gapBetweenBorders;
+		y -= this.dGapBetweenComponents.x;
 		y -= this.dCard.y;
 		this.cBoard = new Vector2(x, y);
 

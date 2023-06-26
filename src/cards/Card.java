@@ -1,6 +1,7 @@
 package cards;
 
 import managers.ListsManager;
+import utils.Flow;
 import utils.ImageView;
 import utils.Interfaces.IImageViewAble;
 import utils.ListImageViewAbles;
@@ -32,6 +33,11 @@ public abstract class Card implements IImageViewAble {
 		for (ListImageViewAbles<IImageViewAble> list : ListsManager.INSTANCE.lists)
 			list.layerZSort();
 
+	}
+
+	@Override
+	public void handleMousePressedPrimary() {
+		Flow.INSTANCE.getGameStateCurrent().handleCardPressed(this);
 	}
 
 }

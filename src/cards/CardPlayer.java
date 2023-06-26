@@ -1,6 +1,14 @@
 package cards;
 
-public abstract class CardPlayer extends Card {
+import interfaces.IAbility;
+import interfaces.ICardType;
+import interfaces.ICost;
+
+public abstract class CardPlayer extends Card implements ICardType, ICost, IAbility {
+
+	public CardPlayer() {
+		setUpCardType();
+	}
 
 	@Override
 	protected String getFileName() {
@@ -11,5 +19,7 @@ public abstract class CardPlayer extends Card {
 		return fileName;
 
 	}
+
+	protected abstract void setUpCardType();
 
 }

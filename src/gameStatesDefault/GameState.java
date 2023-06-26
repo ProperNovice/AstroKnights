@@ -1,7 +1,9 @@
 package gameStatesDefault;
 
+import cards.Card;
 import enums.EText;
 import javafx.scene.input.KeyCode;
+import managers.ListsManager;
 import utils.ArrayList;
 import utils.Flow;
 import utils.KeyCodeHandler;
@@ -51,6 +53,43 @@ public abstract class GameState {
 
 	protected final ArrayList<Class<? extends GameState>> getFlow() {
 		return Flow.INSTANCE.getFlow();
+	}
+
+	protected final void proceedToNextGameState() {
+		Flow.INSTANCE.proceed();
+	}
+
+	protected final void concealText() {
+		TextManager.INSTANCE.concealText();
+	}
+
+	public final void handleCardPressed(Card card) {
+
+		if (ListsManager.INSTANCE.hand.getArrayList().contains(card))
+			handleCardPressedHand(card);
+		else if (ListsManager.INSTANCE.board.getArrayList().contains(card))
+			handleCardPressedBoard(card);
+		else if (ListsManager.INSTANCE.deck.getArrayList().contains(card))
+			handleCardPressedDeck(card);
+		else if (ListsManager.INSTANCE.discardPile.getArrayList().contains(card))
+			handleCardPressedDiscardPile(card);
+
+	}
+
+	protected void handleCardPressedHand(Card card) {
+
+	}
+
+	protected void handleCardPressedBoard(Card card) {
+
+	}
+
+	protected void handleCardPressedDeck(Card card) {
+
+	}
+
+	protected void handleCardPressedDiscardPile(Card card) {
+
 	}
 
 }

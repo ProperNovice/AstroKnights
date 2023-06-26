@@ -4,8 +4,11 @@ import java.lang.reflect.InvocationTargetException;
 
 import cards.Card;
 import cards.Card001;
+import cards.Card002;
 import gameStatesDefault.GameState;
+import interfaces.IAbility;
 import managers.ListsManager;
+import utils.Flow;
 import utils.ListImageViewAbles;
 
 public class JUnit extends GameState {
@@ -14,9 +17,14 @@ public class JUnit extends GameState {
 	public void execute() {
 
 		addCardToDeck(Card001.class, 4);
-		addCardToDiscardPile(Card001.class, 6);
+		addCardToDiscardPile(Card002.class, 6);
 		addCardToHand(Card001.class, 3);
-		addCardToBoard(Card001.class, 5);
+		addCardToBoard(Card002.class, 5);
+
+		Card card = ListsManager.INSTANCE.board.getArrayList().getLast();
+		IAbility iAbility = (IAbility) card;
+		iAbility.resolveWhenPlay();
+		Flow.INSTANCE.proceed();
 
 	}
 

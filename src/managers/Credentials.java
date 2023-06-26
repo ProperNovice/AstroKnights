@@ -15,6 +15,9 @@ public enum Credentials {
 	public Vector2 cTextPanel, cImageViewIndicator;
 	public RearrangeTypeEnum rearrangeTypeEnumText = RearrangeTypeEnum.LINEAR;
 
+	public Vector2 dCard;
+	public Vector2 cHand, cDeck, cDiscardPile;
+
 	private Credentials() {
 
 		double x = 0, y = 0;
@@ -32,6 +35,16 @@ public enum Credentials {
 		x = this.gapBetweenBorders;
 		y = this.gapBetweenBorders;
 		this.cImageViewIndicator = new Vector2(x, y);
+
+		// d card
+
+		x = 184;
+		y = 260;
+		this.dCard = new Vector2(x, y);
+		
+		// c hand
+		
+		
 
 	}
 

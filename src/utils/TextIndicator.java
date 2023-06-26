@@ -24,6 +24,10 @@ public class TextIndicator implements INode {
 
 	}
 
+	public TextIndicator() {
+		this("");
+	}
+
 	@Override
 	public void setVisible(final boolean value) {
 

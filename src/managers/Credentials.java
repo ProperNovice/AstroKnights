@@ -16,7 +16,7 @@ public enum Credentials {
 	public RearrangeTypeEnum rearrangeTypeEnumText = RearrangeTypeEnum.LINEAR;
 
 	public Vector2 dCard;
-	public Vector2 cHand, cDeck, cDiscardPile;
+	public Vector2 cHand, cDeck, cDiscardPile, cBoard;
 
 	private Credentials() {
 
@@ -41,10 +41,38 @@ public enum Credentials {
 		x = 184;
 		y = 260;
 		this.dCard = new Vector2(x, y);
-		
+
 		// c hand
-		
-		
+
+		x = this.gapBetweenBorders;
+		y = this.dFrame.y;
+		y -= this.gapBetweenBorders;
+		y -= this.dCard.y;
+		this.cHand = new Vector2(x, y);
+
+		// c board
+
+		x = this.gapBetweenBorders;
+		y = this.cHand.y;
+		y -= this.gapBetweenBorders;
+		y -= this.dCard.y;
+		this.cBoard = new Vector2(x, y);
+
+		// c discard pile
+
+		x = this.dFrame.x;
+		x -= this.gapBetweenBorders;
+		x -= this.dCard.x;
+		y = this.gapBetweenBorders;
+		this.cDiscardPile = new Vector2(x, y);
+
+		// c deck
+
+		x = this.cDiscardPile.x;
+		x -= this.dGapBetweenComponents.x;
+		x -= this.dCard.x;
+		y = this.gapBetweenBorders;
+		this.cDeck = new Vector2(x, y);
 
 	}
 

@@ -1,8 +1,11 @@
 package cards;
 
+import managers.ListsManager;
 import utils.ImageView;
+import utils.Interfaces.IImageViewAble;
+import utils.ListImageViewAbles;
 
-public abstract class Card {
+public abstract class Card implements IImageViewAble {
 
 	public Card() {
 
@@ -16,12 +19,18 @@ public abstract class Card {
 
 	}
 
-	private String getFileName() {
+	protected abstract String getFileName();
 
-		String fileName = "cards/";
-		fileName += this.getClass().getSimpleName().substring(4);
-		fileName += ".png";
-		return fileName;
+	@Override
+	public final void handleMouseEntered() {
+		getImageView().toFront();
+	}
+
+	@Override
+	public final void handleMouseExited() {
+
+		for (ListImageViewAbles<IImageViewAble> list : ListsManager.INSTANCE.lists)
+			list.layerZSort();
 
 	}
 

@@ -2,25 +2,25 @@ package gameStates;
 
 import java.lang.reflect.InvocationTargetException;
 
-import cardType.CardTypeFuel;
-import cardType.CardTypeTech;
-import cardType.CardTypeWeapon;
 import cards.Card;
 import cards.Card001;
 import gameStatesDefault.GameState;
-import interfaces.ICardType;
-import interfaces.ICost;
+import managers.ListsManager;
+import utils.ListImageViewAbles;
 
 public class JUnit extends GameState {
 
 	@Override
 	public void execute() {
 
-		handleCard(Card001.class);
+		addCardToDeck(Card001.class, 4);
+		addCardToDiscardPile(Card001.class, 6);
+		addCardToHand(Card001.class, 3);
+		addCardToBoard(Card001.class, 5);
 
 	}
 
-	public void handleCard(Class<? extends Card> cardClass) {
+	public Card createCard(Class<? extends Card> cardClass) {
 
 		Card card = null;
 
@@ -31,15 +31,37 @@ public class JUnit extends GameState {
 			e.printStackTrace();
 		}
 
-		ICost iCost = (ICost) card;
-		System.out.println("card cost -> " + iCost.getCost());
-		System.out.println();
+		return card;
 
-		ICardType iCardType = (ICardType) card;
-		System.out.println("is card type");
-		System.out.println("fuel -> " + iCardType.isCardType(CardTypeFuel.class));
-		System.out.println("tech -> " + iCardType.isCardType(CardTypeTech.class));
-		System.out.println("weapon -> " + iCardType.isCardType(CardTypeWeapon.class));
+	}
+
+	public void addCardToDeck(Class<? extends Card> cardClass, int amount) {
+		addCardToList(cardClass, amount, ListsManager.INSTANCE.deck);
+	}
+
+	public void addCardToDiscardPile(Class<? extends Card> cardClass, int amount) {
+		addCardToList(cardClass, amount, ListsManager.INSTANCE.discardPile);
+	}
+
+	public void addCardToHand(Class<? extends Card> cardClass, int amount) {
+		addCardToList(cardClass, amount, ListsManager.INSTANCE.hand);
+	}
+
+	public void addCardToBoard(Class<? extends Card> cardClass, int amount) {
+		addCardToList(cardClass, amount, ListsManager.INSTANCE.board);
+	}
+
+	private void addCardToList(Class<? extends Card> cardClass, int amount,
+			ListImageViewAbles<Card> list) {
+
+		for (int counter = 1; counter <= amount; counter++) {
+
+			Card card = createCard(cardClass);
+			list.getArrayList().addLast(card);
+
+		}
+
+		list.relocateImageViews();
 
 	}
 

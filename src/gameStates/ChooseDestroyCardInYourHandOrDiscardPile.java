@@ -17,7 +17,7 @@ public class ChooseDestroyCardInYourHandOrDiscardPile extends GameState {
 	protected void executeTextOption(EText eText) {
 
 		if (eText.equals(EText.DESTROY_CARD))
-			getFlow().addFirst(DestroyACardInYourHandOrDiscardPile.class);
+			getFlow().addFirst(DestroyCardInYourHandOrDiscardPile.class);
 
 		proceedToNextGameState();
 

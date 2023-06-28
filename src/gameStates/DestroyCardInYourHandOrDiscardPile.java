@@ -6,7 +6,7 @@ import managers.ListsManager;
 import managers.Model;
 import models.Card;
 
-public class DestroyACardInYourHandOrDiscardPile extends GameState {
+public class DestroyCardInYourHandOrDiscardPile extends GameState {
 
 	@Override
 	public void execute() {

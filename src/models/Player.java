@@ -2,16 +2,16 @@ package models;
 
 import managers.NumberIndicator;
 
-public enum Homeworld {
+public enum Player {
 
 	INSTANCE;
 
 	private NumberIndicator powerIndicator, healthIndicator;
 
-	private Homeworld() {
+	private Player() {
 
-		this.powerIndicator = new NumberIndicator("hw power", 2, 0, 600, 25);
-		this.healthIndicator = new NumberIndicator("hw health", 26, 0, 600, 75);
+		this.powerIndicator = new NumberIndicator("pl power", 5, 0, 600, 125);
+		this.healthIndicator = new NumberIndicator("pl health", 10, 0, 600, 175);
 
 	}
 

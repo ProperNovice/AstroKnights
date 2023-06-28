@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import cardsPlayer.Card001;
 import cardsPlayer.Card002;
 import cardsPlayer.Card004;
+import cardsPlayer.Card007;
 import cardsPlayer.CardPlayer;
 import gameStatesDefault.GameState;
 import interfaces.IAbility;
@@ -12,6 +13,7 @@ import javafx.scene.input.KeyCode;
 import managers.ListsManager;
 import models.Card;
 import models.Homeworld;
+import models.Player;
 import utils.ListImageViewAbles;
 
 public class JUnit extends GameState {
@@ -20,10 +22,12 @@ public class JUnit extends GameState {
 	public void execute() {
 
 		Homeworld.values();
+		Player.values();
 
 		addCardToDeck(Card001.class, 1);
 		addCardToDiscardPile(Card002.class, 6);
-		addCardToHand(Card002.class, 2);
+		addCardToHand(Card002.class, 1);
+		addCardToHand(Card004.class, 1);
 		addCardToBoard(Card001.class, 1);
 
 	}
@@ -31,7 +35,8 @@ public class JUnit extends GameState {
 	@Override
 	protected void handleKeyPressed(KeyCode keyCode) {
 
-		resolveCardWhenPlay(Card004.class);
+		resolveCardWhenPlay(Card007.class);
+		proceedToNextGameState();
 
 	}
 

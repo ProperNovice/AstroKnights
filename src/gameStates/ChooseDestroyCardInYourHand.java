@@ -2,11 +2,11 @@ package gameStates;
 
 import gameStatesDefault.GameState;
 
-public class ChooseDestroyCardInYourHandOrDiscardPile extends AChooseDestroyCard {
+public class ChooseDestroyCardInYourHand extends AChooseDestroyCard {
 
 	@Override
 	protected Class<? extends GameState> getDestroyGameStateToProceed() {
-		return DestroyCardInYourHandOrDiscardPile.class;
+		return DestroyCardInYourHand.class;
 	}
 
 }

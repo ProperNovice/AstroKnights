@@ -2,13 +2,16 @@ package gameStates;
 
 import java.lang.reflect.InvocationTargetException;
 
-import cards.Card;
-import cards.Card001;
-import cards.Card002;
+import cardsPlayer.Card001;
+import cardsPlayer.Card002;
+import cardsPlayer.Card004;
+import cardsPlayer.CardPlayer;
 import gameStatesDefault.GameState;
 import interfaces.IAbility;
+import javafx.scene.input.KeyCode;
 import managers.ListsManager;
-import utils.Flow;
+import models.Card;
+import models.Homeworld;
 import utils.ListImageViewAbles;
 
 public class JUnit extends GameState {
@@ -16,15 +19,29 @@ public class JUnit extends GameState {
 	@Override
 	public void execute() {
 
-		addCardToDeck(Card001.class, 4);
+		Homeworld.values();
+
+		addCardToDeck(Card001.class, 1);
 		addCardToDiscardPile(Card002.class, 6);
-		addCardToHand(Card001.class, 3);
-		addCardToBoard(Card002.class, 5);
+		addCardToHand(Card002.class, 2);
+		addCardToBoard(Card001.class, 1);
+
+	}
+
+	@Override
+	protected void handleKeyPressed(KeyCode keyCode) {
+
+		resolveCardWhenPlay(Card004.class);
+
+	}
+
+	public void resolveCardWhenPlay(Class<? extends CardPlayer> classCard) {
+
+		addCardToBoard(classCard, 1);
 
 		Card card = ListsManager.INSTANCE.board.getArrayList().getLast();
 		IAbility iAbility = (IAbility) card;
 		iAbility.resolveWhenPlay();
-		Flow.INSTANCE.proceed();
 
 	}
 

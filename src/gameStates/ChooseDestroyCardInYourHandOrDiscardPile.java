@@ -3,7 +3,7 @@ package gameStates;
 import enums.EText;
 import gameStatesDefault.GameState;
 
-public class ChooseDestroyACardInYourHandOrDiscardPile extends GameState {
+public class ChooseDestroyCardInYourHandOrDiscardPile extends GameState {
 
 	@Override
 	public void execute() {

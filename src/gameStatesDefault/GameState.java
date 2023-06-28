@@ -1,9 +1,9 @@
 package gameStatesDefault;
 
-import cards.Card;
 import enums.EText;
 import javafx.scene.input.KeyCode;
 import managers.ListsManager;
+import models.Card;
 import utils.ArrayList;
 import utils.Flow;
 import utils.KeyCodeHandler;

@@ -1,4 +1,4 @@
-package cards;
+package models;
 
 import managers.ListsManager;
 import utils.Flow;
@@ -16,7 +16,9 @@ public abstract class Card implements IImageViewAble {
 
 	private void createImageView() {
 
-		new ImageView(getFileName(), this);
+		String fileName = "cards/";
+		fileName += getFileName();
+		new ImageView(fileName, this);
 
 	}
 

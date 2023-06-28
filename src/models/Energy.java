@@ -1,4 +1,4 @@
-package managers;
+package models;
 
 import utils.TextIndicator;
 

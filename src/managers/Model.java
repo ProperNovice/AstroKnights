@@ -1,6 +1,6 @@
 package managers;
 
-import cards.Card;
+import models.Card;
 import utils.ListImageViewAbles;
 import utils.Logger;
 

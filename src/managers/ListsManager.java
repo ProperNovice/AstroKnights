@@ -1,10 +1,10 @@
 package managers;
 
-import cards.Card;
 import listCredentials.ListCredentialsBoard;
 import listCredentials.ListCredentialsDeck;
 import listCredentials.ListCredentialsDiscardPile;
 import listCredentials.ListCredentialsHand;
+import models.Card;
 import utils.ArrayList;
 import utils.Interfaces.IImageViewAble;
 import utils.ListImageViewAbles;

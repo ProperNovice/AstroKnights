@@ -1,7 +1,7 @@
-package cards;
+package cardsPlayer;
 
 import cardType.CardTypeFuel;
-import gameStates.ChooseDestroyACardInYourHandOrDiscardPile;
+import gameStates.ChooseDestroyCardInYourHandOrDiscardPile;
 import gameStates.ChooseDrawAndDiscardCard;
 import utils.Flow;
 
@@ -20,7 +20,7 @@ public class Card001 extends CardPlayer {
 	@Override
 	public void resolveWhenPlay() {
 
-		Flow.INSTANCE.getFlow().addAllFirst(ChooseDestroyACardInYourHandOrDiscardPile.class,
+		Flow.INSTANCE.getFlow().addAllFirst(ChooseDestroyCardInYourHandOrDiscardPile.class,
 				ChooseDrawAndDiscardCard.class);
 
 	}

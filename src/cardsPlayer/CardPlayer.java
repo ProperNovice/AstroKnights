@@ -1,8 +1,9 @@
-package cards;
+package cardsPlayer;
 
 import interfaces.IAbility;
 import interfaces.ICardType;
 import interfaces.ICost;
+import models.Card;
 
 public abstract class CardPlayer extends Card implements ICardType, ICost, IAbility {
 
@@ -13,7 +14,7 @@ public abstract class CardPlayer extends Card implements ICardType, ICost, IAbil
 	@Override
 	protected String getFileName() {
 
-		String fileName = "cards/";
+		String fileName = "player/";
 		fileName += this.getClass().getSimpleName().substring(4);
 		fileName += ".png";
 		return fileName;

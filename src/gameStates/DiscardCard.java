@@ -1,10 +1,10 @@
 package gameStates;
 
-import cards.Card;
 import enums.EText;
 import gameStatesDefault.GameState;
 import managers.ListsManager;
 import managers.Model;
+import models.Card;
 
 public class DiscardCard extends GameState {
 

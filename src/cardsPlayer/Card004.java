@@ -18,8 +18,8 @@ public class Card004 extends CardPlayer {
 	@Override
 	public void resolveWhenPlay() {
 
-		Homeworld.INSTANCE.getPowerIndicator().addCurrentValue(1);
-		Homeworld.INSTANCE.getHealthIndicator().addCurrentValue(1);
+		Homeworld.INSTANCE.powerUp(1);
+		Homeworld.INSTANCE.healthAddValue(1);
 
 	}
 

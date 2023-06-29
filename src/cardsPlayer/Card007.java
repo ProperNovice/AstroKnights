@@ -17,7 +17,7 @@ public class Card007 extends CardPlayer {
 
 	@Override
 	public void resolveWhenPlay() {
-		Homeworld.INSTANCE.getPowerIndicator().addCurrentValue(2);
+		Homeworld.INSTANCE.powerUp(2);
 	}
 
 }

@@ -20,7 +20,7 @@ public class Card005 extends CardPlayer {
 	@Override
 	public void resolveWhenPlay() {
 
-		Homeworld.INSTANCE.getPowerIndicator().addCurrentValue(1);
+		Homeworld.INSTANCE.powerUp(1);
 		Flow.INSTANCE.getFlow().addFirst(ChooseDestroyCardInYourHand.class);
 
 	}

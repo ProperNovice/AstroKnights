@@ -20,8 +20,8 @@ public class NumberIndicator {
 
 	}
 
-	public void addCurrentValue(int amount) {
-		this.currentValue = Math.min(this.currentValue + amount, this.totalValue);
+	public void addCurrentValue(int value) {
+		this.currentValue = Math.min(this.currentValue + value, this.totalValue);
 		updateIndicator();
 	}
 

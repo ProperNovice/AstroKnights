@@ -15,12 +15,12 @@ public enum Homeworld {
 
 	}
 
-	public NumberIndicator getPowerIndicator() {
-		return this.powerIndicator;
+	public void powerUp(int value) {
+		this.powerIndicator.addCurrentValue(value);
 	}
 
-	public NumberIndicator getHealthIndicator() {
-		return this.healthIndicator;
+	public void healthAddValue(int value) {
+		this.healthIndicator.addCurrentValue(value);
 	}
 
 }

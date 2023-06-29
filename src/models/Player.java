@@ -15,12 +15,8 @@ public enum Player {
 
 	}
 
-	public NumberIndicator getPowerIndicator() {
-		return this.powerIndicator;
-	}
-
-	public NumberIndicator getHealthIndicator() {
-		return this.healthIndicator;
+	public void powerUp(int value) {
+		this.powerIndicator.addCurrentValue(value);
 	}
 
 }

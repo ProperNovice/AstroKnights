@@ -15,8 +15,16 @@ public enum Player {
 
 	}
 
-	public void powerUp(int value) {
-		this.powerIndicator.addCurrentValue(value);
+	public void powerUpOnce() {
+		this.powerIndicator.addOne();
+	}
+	
+	public void addHealth() {
+		this.healthIndicator.addOne();
+	}
+	
+	public void substractHealth() {
+		
 	}
 
 }

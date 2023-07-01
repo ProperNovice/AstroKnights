@@ -2,7 +2,7 @@ package cardsPlayer;
 
 import cardType.CardTypeFuel;
 import gameStates.ChooseDestroyCardInYourHand;
-import models.Homeworld;
+import gameStates.HomeworldPowerUp;
 import utils.Flow;
 
 public class Card005 extends CardPlayer {
@@ -20,8 +20,8 @@ public class Card005 extends CardPlayer {
 	@Override
 	public void resolveWhenPlay() {
 
-		Homeworld.INSTANCE.powerUp(1);
-		Flow.INSTANCE.getFlow().addFirst(ChooseDestroyCardInYourHand.class);
+		Flow.INSTANCE.getFlow().addAllFirst(HomeworldPowerUp.class,
+				ChooseDestroyCardInYourHand.class);
 
 	}
 

@@ -12,6 +12,7 @@ import interfaces.IAbility;
 import javafx.scene.input.KeyCode;
 import managers.ListsManager;
 import models.Card;
+import models.Energy;
 import models.Homeworld;
 import models.Player;
 import utils.ListImageViewAbles;
@@ -21,6 +22,7 @@ public class JUnit extends GameState {
 	@Override
 	public void execute() {
 
+		Energy.values();
 		Homeworld.values();
 		Player.values();
 
@@ -36,6 +38,7 @@ public class JUnit extends GameState {
 	protected void handleKeyPressed(KeyCode keyCode) {
 
 		resolveCardWhenPlay(Card007.class);
+
 		proceedToNextGameState();
 
 	}

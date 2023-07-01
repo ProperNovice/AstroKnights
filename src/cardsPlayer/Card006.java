@@ -1,8 +1,9 @@
 package cardsPlayer;
 
 import cardType.CardTypeTech;
-import models.Homeworld;
-import models.Player;
+import gameStates.HomeworldPowerUp;
+import gameStates.PlayerPowerUp;
+import utils.Flow;
 
 public class Card006 extends CardPlayer {
 
@@ -19,8 +20,7 @@ public class Card006 extends CardPlayer {
 	@Override
 	public void resolveWhenPlay() {
 
-		Homeworld.INSTANCE.powerUp(1);
-		Player.INSTANCE.powerUp(1);
+		Flow.INSTANCE.getFlow().addAllFirst(HomeworldPowerUp.class, PlayerPowerUp.class);
 
 	}
 

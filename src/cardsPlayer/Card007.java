@@ -1,7 +1,8 @@
 package cardsPlayer;
 
 import cardType.CardTypeTech;
-import models.Homeworld;
+import gameStates.HomeworldPowerUp;
+import utils.Flow;
 
 public class Card007 extends CardPlayer {
 
@@ -17,7 +18,10 @@ public class Card007 extends CardPlayer {
 
 	@Override
 	public void resolveWhenPlay() {
-		Homeworld.INSTANCE.powerUp(2);
+
+		for (int counter = 1; counter <= 2; counter++)
+			Flow.INSTANCE.getFlow().addFirst(HomeworldPowerUp.class);
+
 	}
 
 }

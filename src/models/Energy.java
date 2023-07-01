@@ -1,33 +1,20 @@
 package models;
 
-import utils.TextIndicator;
+import managers.NumberIndicator;
 
 public enum Energy {
 
 	INSTANCE;
 
-	private TextIndicator textIndicator = new TextIndicator();
-	private int energy = 0;
+	private NumberIndicator energy = new NumberIndicator("Energy", -1, 0, 600, 225);
 
 	private Energy() {
 
-		updateText();
-
 	}
 
-	public void addEnergyUpdateText(int amount) {
+	public void addEnergy() {
 
-		this.energy += amount;
-		updateText();
-
-	}
-
-	private void updateText() {
-
-		String text = "";
-		text += this.energy;
-		text += " energy";
-		this.textIndicator.setText(text);
+		this.energy.addOne();
 
 	}
 

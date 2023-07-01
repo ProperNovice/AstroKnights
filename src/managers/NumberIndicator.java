@@ -20,9 +20,24 @@ public class NumberIndicator {
 
 	}
 
-	public void addCurrentValue(int value) {
-		this.currentValue = Math.min(this.currentValue + value, this.totalValue);
+	public void addOne() {
+
+		this.currentValue++;
+
+		if (this.totalValue != -1)
+			this.currentValue = Math.min(this.currentValue, this.totalValue);
+
 		updateIndicator();
+
+	}
+
+	public void substractOne() {
+
+		this.currentValue--;
+		this.currentValue = Math.max(this.currentValue, this.startingValue);
+
+		updateIndicator();
+
 	}
 
 	private void updateIndicator() {
@@ -30,8 +45,14 @@ public class NumberIndicator {
 		String text = this.text;
 		text += ": ";
 		text += this.currentValue;
-		text += "/";
-		text += this.totalValue;
+
+		if (this.totalValue != -1) {
+
+			text += "/";
+			text += this.totalValue;
+
+		}
+
 		this.textIndicator.setText(text);
 
 	}

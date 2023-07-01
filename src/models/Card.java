@@ -17,12 +17,25 @@ public abstract class Card implements IImageViewAble {
 	private void createImageView() {
 
 		String fileName = "cards/";
-		fileName += getFileName();
-		new ImageView(fileName, this);
+
+		fileName += getFolderName();
+		fileName += "/";
+		fileName += this.getClass().getSimpleName().substring(4);
+		fileName += ".png";
+
+		try {
+
+			new ImageView(fileName, this);
+
+		} catch (Exception exception) {
+
+			System.out.println(fileName);
+
+		}
 
 	}
 
-	protected abstract String getFileName();
+	protected abstract String getFolderName();
 
 	@Override
 	public final void handleMouseEntered() {

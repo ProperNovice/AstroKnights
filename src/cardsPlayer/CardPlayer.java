@@ -12,13 +12,8 @@ public abstract class CardPlayer extends Card implements ICardType, ICost, IAbil
 	}
 
 	@Override
-	protected final String getFileName() {
-
-		String fileName = "player/";
-		fileName += this.getClass().getSimpleName().substring(4);
-		fileName += ".png";
-		return fileName;
-
+	protected final String getFolderName() {
+		return "player";
 	}
 
 	protected abstract void setUpCardType();

@@ -2,6 +2,7 @@ package gameStates;
 
 import java.lang.reflect.InvocationTargetException;
 
+import cardsMonster.Card000;
 import cardsPlayer.Card001;
 import cardsPlayer.Card002;
 import cardsPlayer.Card004;
@@ -31,6 +32,8 @@ public class JUnit extends GameState {
 		addCardToHand(Card002.class, 1);
 		addCardToHand(Card004.class, 1);
 		addCardToBoard(Card001.class, 1);
+		
+		Card card = createCard(Card000.class);
 
 	}
 

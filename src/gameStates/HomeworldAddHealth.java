@@ -1,14 +1,14 @@
 package gameStates;
 
 import gameStatesDefault.GameState;
-import models.Homeworld;
+import managers.Model;
 
 public class HomeworldAddHealth extends GameState {
 
 	@Override
 	public void execute() {
 
-		Homeworld.INSTANCE.healthAddValueOnce();
+		Model.INSTANCE.addHealthToHomeworld();
 		proceedToNextGameState();
 
 	}

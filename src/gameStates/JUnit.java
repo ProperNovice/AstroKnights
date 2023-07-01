@@ -32,8 +32,8 @@ public class JUnit extends GameState {
 		addCardToHand(Card002.class, 1);
 		addCardToHand(Card004.class, 1);
 		addCardToBoard(Card001.class, 1);
-		
-		Card card = createCard(Card000.class);
+
+		createCard(Card000.class);
 
 	}
 

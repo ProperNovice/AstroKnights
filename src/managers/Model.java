@@ -1,6 +1,8 @@
 package managers;
 
 import models.Card;
+import models.Homeworld;
+import models.Player;
 import utils.ListImageViewAbles;
 import utils.Logger;
 
@@ -58,6 +60,22 @@ public enum Model {
 		ListsManager.INSTANCE.discardPile.getArrayList().addLast(card);
 		ListsManager.INSTANCE.discardPile.relocateImageViews();
 
+	}
+
+	public void powerUpPlayer() {
+		Player.INSTANCE.getPowerIndicator().addOne();
+	}
+
+	public void addHealthToPlayer() {
+		Player.INSTANCE.getHealthIndicator().addOne();
+	}
+
+	public void powerUpHomeworld() {
+		Homeworld.INSTANCE.getPowerIndicator().addOne();
+	}
+
+	public void addHealthToHomeworld() {
+		Homeworld.INSTANCE.getHealthIndicator().addOne();
 	}
 
 }

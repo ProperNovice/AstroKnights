@@ -1,14 +1,14 @@
 package gameStates;
 
 import gameStatesDefault.GameState;
-import models.Player;
+import managers.Model;
 
 public class PlayerPowerUp extends GameState {
 
 	@Override
 	public void execute() {
 
-		Player.INSTANCE.powerUpOnce();
+		Model.INSTANCE.powerUpPlayer();
 		proceedToNextGameState();
 
 	}

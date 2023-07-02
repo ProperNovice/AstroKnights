@@ -32,8 +32,7 @@ public class JUnit extends GameState {
 		addCardToHand(Card002.class, 1);
 		addCardToHand(Card004.class, 1);
 		addCardToBoard(Card001.class, 1);
-
-		createCard(Card000.class);
+		addCardToMonsters(Card000.class, 1);
 
 	}
 
@@ -85,6 +84,10 @@ public class JUnit extends GameState {
 
 	public void addCardToBoard(Class<? extends Card> cardClass, int amount) {
 		addCardToList(cardClass, amount, ListsManager.INSTANCE.board);
+	}
+
+	public void addCardToMonsters(Class<? extends Card> cardClass, int amount) {
+		addCardToList(cardClass, amount, ListsManager.INSTANCE.monsters);
 	}
 
 	private void addCardToList(Class<? extends Card> cardClass, int amount,

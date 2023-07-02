@@ -73,6 +73,8 @@ public abstract class GameState {
 			handleCardPressedDeck(card);
 		else if (ListsManager.INSTANCE.discardPile.getArrayList().contains(card))
 			handleCardPressedDiscardPile(card);
+		else if (ListsManager.INSTANCE.monsters.getArrayList().contains(card))
+			handleCardPressedMonsters(card);
 
 	}
 
@@ -89,6 +91,10 @@ public abstract class GameState {
 	}
 
 	protected void handleCardPressedDiscardPile(Card card) {
+
+	}
+
+	protected void handleCardPressedMonsters(Card card) {
 
 	}
 

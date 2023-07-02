@@ -1,5 +1,6 @@
 package managers;
 
+import listCredentials.LIstCredentialsMonsters;
 import listCredentials.ListCredentialsBoard;
 import listCredentials.ListCredentialsDeck;
 import listCredentials.ListCredentialsDiscardPile;
@@ -14,7 +15,7 @@ public enum ListsManager {
 	INSTANCE;
 
 	public final ArrayList<ListImageViewAbles<IImageViewAble>> lists = new ArrayList<ListImageViewAbles<IImageViewAble>>();
-	public ListImageViewAbles<Card> deck, discardPile, hand, board;
+	public ListImageViewAbles<Card> deck, discardPile, hand, board, monsters;
 
 	public void instantiate() {
 
@@ -22,6 +23,7 @@ public enum ListsManager {
 		this.discardPile = new ListImageViewAbles<>(ListCredentialsDiscardPile.class);
 		this.hand = new ListImageViewAbles<>(ListCredentialsHand.class);
 		this.board = new ListImageViewAbles<>(ListCredentialsBoard.class);
+		this.monsters = new ListImageViewAbles<>(LIstCredentialsMonsters.class);
 
 	}
 

@@ -2,7 +2,6 @@ package gameStates;
 
 import enums.EText;
 import gameStatesDefault.GameState;
-import managers.Model;
 
 public class ChooseDrawAndDiscardCard extends GameState {
 
@@ -20,10 +19,7 @@ public class ChooseDrawAndDiscardCard extends GameState {
 		switch (eText) {
 
 		case DRAW_AND_DISCARD:
-
-			Model.INSTANCE.drawCard();
-			getFlow().addFirst(DiscardCard.class);
-
+			getFlow().addAllFirst(DrawCard.class, DiscardCard.class);
 			break;
 
 		case SKIP:

@@ -15,7 +15,7 @@ public enum ListsManager {
 	INSTANCE;
 
 	public final ArrayList<ListImageViewAbles<IImageViewAble>> lists = new ArrayList<ListImageViewAbles<IImageViewAble>>();
-	public ListImageViewAbles<Card> deck, discardPile, hand, board, monsters;
+	public ListImageViewAbles<Card> deck, discardPile, hand, board, minions;
 
 	public void instantiate() {
 
@@ -23,7 +23,7 @@ public enum ListsManager {
 		this.discardPile = new ListImageViewAbles<>(ListCredentialsDiscardPile.class);
 		this.hand = new ListImageViewAbles<>(ListCredentialsHand.class);
 		this.board = new ListImageViewAbles<>(ListCredentialsBoard.class);
-		this.monsters = new ListImageViewAbles<>(LIstCredentialsMonsters.class);
+		this.minions = new ListImageViewAbles<>(LIstCredentialsMonsters.class);
 
 	}
 

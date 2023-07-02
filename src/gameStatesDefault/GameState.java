@@ -73,7 +73,7 @@ public abstract class GameState {
 			handleCardPressedDeck(card);
 		else if (ListsManager.INSTANCE.discardPile.getArrayList().contains(card))
 			handleCardPressedDiscardPile(card);
-		else if (ListsManager.INSTANCE.monsters.getArrayList().contains(card))
+		else if (ListsManager.INSTANCE.minions.getArrayList().contains(card))
 			handleCardPressedMonsters(card);
 
 	}

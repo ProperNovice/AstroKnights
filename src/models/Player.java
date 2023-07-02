@@ -11,7 +11,7 @@ public enum Player {
 	private Player() {
 
 		this.powerIndicator = new NumberIndicator("pl power", 5, 0, 600, 125);
-		this.healthIndicator = new NumberIndicator("pl health", 10, 0, 600, 175);
+		this.healthIndicator = new NumberIndicator("pl health", 10, 6, 600, 175);
 
 	}
 
@@ -21,10 +21,6 @@ public enum Player {
 
 	public NumberIndicator getHealthIndicator() {
 		return this.healthIndicator;
-	}
-
-	public void substractHealth() {
-
 	}
 
 }

@@ -23,7 +23,7 @@ public enum Model {
 	public void drawCard() {
 
 		if (ListsManager.INSTANCE.deck.getArrayList().isEmpty())
-			transferDiscardPileToDeck();
+			transferCardFromDiscardPileToDeck();
 
 		Logger.INSTANCE.logNewLine("draw card");
 
@@ -31,7 +31,7 @@ public enum Model {
 
 	}
 
-	public void transferDiscardPileToDeck() {
+	public void transferCardFromDiscardPileToDeck() {
 
 		Logger.INSTANCE.logNewLine("transfering discard pile to deck");
 
@@ -68,6 +68,10 @@ public enum Model {
 
 	public void addHealthToPlayer() {
 		Player.INSTANCE.getHealthIndicator().addOne();
+	}
+
+	public void removeHealthFromPlayer() {
+		Player.INSTANCE.getHealthIndicator().substractOne();
 	}
 
 	public void powerUpHomeworld() {

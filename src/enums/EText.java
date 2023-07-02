@@ -17,6 +17,9 @@ public enum EText {
 	CHOOSE_A_CARD_TO_DESTROY("Choose a card to destroy", TextTypeEnum.INDICATOR),
 	DRAW_AND_DISCARD("Draw and discard", TextTypeEnum.OPTION),
 	CHOOSE_A_CARD_TO_DISCARD("Choose a card to discard", TextTypeEnum.INDICATOR),
+	SUFFER_1_DMG_TO_DEFEAT_A_MINION("Suffer 1 damage to defeat a minion", TextTypeEnum.OPTION),
+	DRAW_2_CARDS("Draw 2 cards", TextTypeEnum.OPTION),
+	CHOOSE_A_MINION_TO_DEFEAT("Choose a minion to defeat", TextTypeEnum.INDICATOR),
 
 	;
 

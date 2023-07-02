@@ -34,7 +34,7 @@ public class NumberIndicator {
 	public void substractOne() {
 
 		this.currentValue--;
-		this.currentValue = Math.max(this.currentValue, this.startingValue);
+		this.currentValue = Math.max(this.currentValue, 0);
 
 		updateIndicator();
 

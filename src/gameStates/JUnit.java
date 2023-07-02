@@ -2,11 +2,11 @@ package gameStates;
 
 import java.lang.reflect.InvocationTargetException;
 
-import cardsMonster.Card000;
+import cardsMinion.Card000;
 import cardsPlayer.Card001;
 import cardsPlayer.Card002;
 import cardsPlayer.Card004;
-import cardsPlayer.Card007;
+import cardsPlayer.Card009;
 import cardsPlayer.CardPlayer;
 import gameStatesDefault.GameState;
 import interfaces.IAbility;
@@ -27,19 +27,20 @@ public class JUnit extends GameState {
 		Homeworld.values();
 		Player.values();
 
+		addCardToDeck(Card002.class, 1);
 		addCardToDeck(Card001.class, 1);
 		addCardToDiscardPile(Card002.class, 6);
 		addCardToHand(Card002.class, 1);
 		addCardToHand(Card004.class, 1);
 		addCardToBoard(Card001.class, 1);
-		addCardToMonsters(Card000.class, 1);
+		addCardToMonsters(Card000.class, 3);
 
 	}
 
 	@Override
 	protected void handleKeyPressed(KeyCode keyCode) {
 
-		resolveCardWhenPlay(Card007.class);
+		resolveCardWhenPlay(Card009.class);
 
 		proceedToNextGameState();
 
@@ -87,7 +88,7 @@ public class JUnit extends GameState {
 	}
 
 	public void addCardToMonsters(Class<? extends Card> cardClass, int amount) {
-		addCardToList(cardClass, amount, ListsManager.INSTANCE.monsters);
+		addCardToList(cardClass, amount, ListsManager.INSTANCE.minions);
 	}
 
 	private void addCardToList(Class<? extends Card> cardClass, int amount,
